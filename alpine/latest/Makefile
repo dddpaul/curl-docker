@@ -13,10 +13,10 @@ test:
 	docker run --rm curl/curl:${LATEST_RELEASE_VERSION} -S http://httpbin.org/get
 
 push-registry:
-	docker tag curl/curl:${LATEST_RELEASE_VERSION} curlimages/curl:7.86.0
-	docker push curlimages/curl:7.86.0
-	docker tag curl/curl:${LATEST_RELEASE_VERSION} curlimages/curl:latest
-	docker push curlimages/curl:latest
+	docker tag curl/curl:${LATEST_RELEASE_VERSION} dddpaul/curl:7.86.0
+	docker push dddpaul/curl:7.86.0
+	docker tag curl/curl:${LATEST_RELEASE_VERSION} dddpaul/curl:latest
+	docker push dddpaul/curl:latest
 
 scan:
 	docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/root/.cache/ aquasec/trivy image curl/curl:${LATEST_RELEASE_VERSION}
