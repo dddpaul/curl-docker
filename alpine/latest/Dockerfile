@@ -29,7 +29,8 @@ RUN apk add libssh2 libssh2-dev libssh2-static \
         groff openssl curl-dev                          \
         python3 python3-dev                             \
         libtool curl stunnel perl                       \
-        nghttp2 brotli brotli-dev
+        nghttp2 brotli brotli-dev                       \
+        c-ares c-ares-dev
 
 RUN mkdir /src
 COPY "curl"  "/src/curl"
@@ -76,7 +77,7 @@ LABEL docker.cmd="docker run -it curl/curl:7.86.0 -s -L http://curl.se"
 ###############################################################
 # RUN apk update
 RUN apk upgrade
-RUN apk add --no-cache brotli brotli-dev libssh2 nghttp2-dev && \
+RUN apk add --no-cache brotli brotli-dev libssh2 nghttp2-dev c-ares && \
     rm -fr /var/cache/apk/*
 
 ###############################################################

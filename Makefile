@@ -9,7 +9,7 @@ export DOCKER_CLI_EXPERIMENTAL=enabled
 
 # set curl configure options
 export CONFIGURE_BUILD_OPTS=" --enable-static --disable-ldap --enable-ipv6 --enable-unix-sockets --with-ssl --with-libssh2 --with-nghttp2=/usr \
---prefix=/usr/local"
+--prefix=/usr/local --enable-ares"
 
 # set docker build options used when building docker images
 export DOCKER_BUILD_OPTS=--no-cache --compress
